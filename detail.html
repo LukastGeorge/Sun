@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Sản Phẩm - GDU TechStore</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fa-solid fa-microchip"></i>
+                    GDU <span>TechStore</span>
+                </a>
+            </div>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li><a href="products.html">Sản Phẩm</a></li>
+                    <li><a href="#">Khuyến Mãi</a></li>
+                    <li><a href="contact.html">Liên Hệ</a></li>
+                </ul>
+            </nav>
+
+            <div class="search-container">
+                <input type="text" placeholder="Bạn cần tìm gì hôm nay?">
+                <button type="button" title="Tìm kiếm"><i class="fa-solid fa-search"></i></button>
+            </div>
+
+            <div class="header-actions">
+                <a href="cart.html" class="cart-icon" title="Giỏ hàng của bạn">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-count">0</span>
+                </a>
+
+                <div class="mobile-menu-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ======================= 
+         MAIN CONTENT 
+         LÝ THUYẾT: Khối giao diện chi tiết sản phẩm.
+    ========================= -->
+    <main class="detail-page">
+        <div class="container detail-container">
+
+            <!-- BREADCRUMB (ĐIỀU HƯỚNG BÁNH MÌ) 
+                 LÝ THUYẾT: Breadcrumb giúp người dùng định vị được họ đang ở đâu 
+                 trong hệ thống phân cấp website (Trang chủ > Sản phẩm > Tên sản phẩm).
+            -->
+            <div class="breadcrumb">
+                <a href="index.html">Trang chủ</a>
+                <i class="fa-solid fa-angle-right"></i>
+                <a href="products.html">Sản phẩm</a>
+                <i class="fa-solid fa-angle-right"></i>
+                <span id="breadcrumb-current">Đang tải...</span>
+            </div>
+
+            <div id="product-detail-loader" style="text-align: center; padding: 50px 0;">
+                <p>Đang tải thông tin sản phẩm...</p>
+            </div>
+
+            <div id="product-detail-error"
+                style="display: none; text-align: center; padding: 50px 0; color: var(--danger-color);">
+                <h3>Không tìm thấy sản phẩm!</h3>
+                <a href="products.html"
+                    style="color: var(--primary-color); text-decoration: underline; margin-top: 10px; display: inline-block;">Quay
+                    lại danh sách sản phẩm</a>
+            </div>
+
+            <!-- PRODUCT DETAIL SECTION 
+                 LÝ THUYẾT: Khu vực hiển thị Hình ảnh, Tên, Giá, và Nút mua hàng.
+                 Dữ liệu này sẽ được tiêm (inject) bằng Javascript từ file `detail.js`.
+            -->
+            <section class="product-detail" id="product-detail-content" style="display: none;">
+                <div class="detail-gallery">
+                    <img id="detail-image" src="" alt="Sản phẩm" class="main-image">
+                </div>
+
+                <div class="detail-info">
+                    <span class="detail-category" id="detail-category">Danh mục</span>
+                    <h1 class="detail-name" id="detail-name">Tên sản phẩm</h1>
+                    <div class="detail-price" id="detail-price">0 VNĐ</div>
+
+                    <div class="detail-description">
+                        <h3>Đặc điểm nổi bật:</h3>
+                        <p id="detail-desc">Mô tả sản phẩm</p>
+                    </div>
+
+                    <div class="detail-actions">
+                        <div class="quantity-control">
+                            <button type="button" id="btn-decrease">-</button>
+                            <input type="number" id="input-quantity" value="1" min="1" max="10">
+                            <button type="button" id="btn-increase">+</button>
+                        </div>
+
+                        <button class="btn-primary" id="btn-add-to-cart">
+                            <i class="fa-solid fa-cart-arrow-down"></i> Thêm vào giỏ hàng
+                        </button>
+                    </div>
+
+                    <div class="detail-policies">
+                        <div class="policy-item">
+                            <i class="fa-solid fa-truck-fast"></i>
+                            <div>
+                                <h4>Giao hàng miễn phí</h4>
+                                <p>Cho đơn hàng trên 5 triệu VNĐ</p>
+                            </div>
+                        </div>
+                        <div class="policy-item">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <div>
+                                <h4>Bảo hành chính hãng</h4>
+                                <p>Lên đến 24 tháng theo tiêu chuẩn</p>
+                            </div>
+                        </div>
+                        <div class="policy-item">
+                            <i class="fa-solid fa-rotate-left"></i>
+                            <div>
+                                <h4>Đổi trả dễ dàng</h4>
+                                <p>Trong vòng 30 ngày nếu có lỗi NSX</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 GDU TechStore. All rights reserved. Đồ án của Sinh viên GDU.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/api.js"></script>
+    <script type="module" src="assets/js/pages/detail.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+/* LÝ THUYẾT BÁO CÁO: CSS Variables (Custom Properties) 
+   Khai báo biến ở scope :root (toàn cục) giúp tái sử dụng mã màu thống nhất (Consistency), 
+   dễ dàng thay đổi Theming (chẳng hạn như Chế độ Dark Mode sau này).
+*/
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #1e40af;
+    --text-color: #1e293b;
+    --bg-color: #f8fafc;
+    --white: #ffffff;
+    --border-color: #e2e8f0;
+    --danger-color: #ef4444;
+}
+
+/* LÝ THUYẾT BÁO CÁO: CSS Reset (Toán tử sao *)
+   Loại bỏ margin/padding dư thừa mạc định của trình duyệt để đồng nhất giao diện (Cross-browser Consistency).
+   Đồng thời box-sizing: border-box giúp việc tính toán kích thước phần tử (Width/Height) chính xác hơn 
+   bằng cách bao gồm cả Padding và Border.
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    -webkit-font-smoothing: antialiased;
+}

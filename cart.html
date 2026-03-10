@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ Hàng - GDU TechStore</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fa-solid fa-microchip"></i>
+                    GDU <span>TechStore</span>
+                </a>
+            </div>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li><a href="products.html">Sản Phẩm</a></li>
+                    <li><a href="#">Khuyến Mãi</a></li>
+                    <li><a href="contact.html">Liên Hệ</a></li>
+                </ul>
+            </nav>
+
+            <div class="search-container">
+                <input type="text" placeholder="Bạn cần tìm gì hôm nay?">
+                <button type="button" title="Tìm kiếm"><i class="fa-solid fa-search"></i></button>
+            </div>
+
+            <div class="header-actions">
+                <a href="cart.html" class="cart-icon" title="Giỏ hàng của bạn">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-count">0</span>
+                </a>
+
+                <div class="mobile-menu-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ======================= 
+         MAIN CONTENT (Khu vực chính) 
+         LÝ THUYẾT: Chứa lưới layout giữa "Danh sách giỏ hàng" và "Biên lai thanh toán".
+    ========================= -->
+    <main class="cart-page">
+        <div class="container">
+
+            <h1 class="page-title">Giỏ hàng của bạn</h1>
+
+            <div class="cart-layout" id="cart-container" style="display: none;">
+                <!-- CỘT TRÁI: DANH SÁCH SẢN PHẨM 
+                     LÝ THUYẾT: Bảng (Table) sản phẩm thường được thi công bằng Cấu trúc thẻ <div> 
+                     kết hợp CSS Grid/Flex thay cho thẻ <table> ngày xưa giúp dễ Responsive (co giãn) hơn trên điện thoại.
+                -->
+                <div class="cart-items">
+                    <div class="cart-header">
+                        <div class="col-product">Sản phẩm</div>
+                        <div class="col-price">Đơn giá</div>
+                        <div class="col-qty">Số lượng</div>
+                        <div class="col-total">Thành tiền</div>
+                        <div class="col-action"></div>
+                    </div>
+
+                    <div id="cart-items-list">
+                        <!-- Sản phẩm được render bằng JS -->
+                    </div>
+
+                    <div class="cart-actions">
+                        <a href="products.html" class="btn-continue"><i class="fa-solid fa-arrow-left"></i> Tiếp tục mua
+                            hàng</a>
+                    </div>
+                </div>
+
+                <!-- CỘT PHẢI: TỔNG QUAN ĐƠN HÀNG 
+                     LÝ THUYẾT: Các `id` như `summary-subtotal` và `summary-total` được gài 
+                     sẵn vào HTML để file JS `cart-page.js` có thể dùng phương thức `getElementById()` 
+                     tìm đến và cập nhật con số thành tiền tương ứng.
+                -->
+                <div class="cart-summary">
+                    <h3>Tổng đơn hàng</h3>
+
+                    <div class="summary-row">
+                        <span>Tạm tính:</span>
+                        <span id="summary-subtotal">0đ</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Phí vận chuyển:</span>
+                        <span>Miễn phí</span>
+                    </div>
+
+                    <div class="summary-total">
+                        <span>Tổng cộng:</span>
+                        <span id="summary-total" class="total-price">0đ</span>
+                    </div>
+
+                    <button class="btn-checkout">Tiến hành thanh toán</button>
+
+                    <div class="payment-methods">
+                        <p>Chấp nhận thanh toán</p>
+                        <div class="payment-icons">
+                            <i class="fa-brands fa-cc-visa"></i>
+                            <i class="fa-brands fa-cc-mastercard"></i>
+                            <i class="fa-brands fa-cc-paypal"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Giỏ hàng rỗng -->
+            <div class="empty-cart" id="empty-cart-msg">
+                <i class="fa-solid fa-cart-arrow-down"></i>
+                <h2>Giỏ hàng chưa có sản phẩm nào</h2>
+                <p>Cùng tham quan mua sắm các sản phẩm công nghệ hot nhất nào!</p>
+                <a href="products.html" class="btn-primary">Mua sắm ngay</a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 GDU TechStore. All rights reserved. Đồ án của Sinh viên GDU.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/cart.js"></script>
+    <script type="module" src="assets/js/pages/cart-page.js"></script>
+
+</body>
+
+</html>

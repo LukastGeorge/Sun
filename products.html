@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản Phẩm - GDU TechStore</title>
+    <!-- Thư viện Font Awesome cho các Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts cho Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Link tới file CSS bên ngoài -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- ======================= 
+         HEADER SECTION 
+    ========================= -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fa-solid fa-microchip"></i>
+                    GDU <span>TechStore</span>
+                </a>
+            </div>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li><a href="products.html">Sản Phẩm</a></li>
+                    <li><a href="#">Khuyến Mãi</a></li>
+                    <li><a href="contact.html">Liên Hệ</a></li>
+                </ul>
+            </nav>
+
+            <div class="search-container">
+                <input type="text" id="header-search" placeholder="Bạn cần tìm gì hôm nay?">
+                <button type="button" title="Tìm kiếm"><i class="fa-solid fa-search"></i></button>
+            </div>
+
+            <div class="header-actions">
+                <a href="cart.html" class="cart-icon" title="Giỏ hàng của bạn">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-count">0</span>
+                </a>
+
+                <div class="mobile-menu-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ======================= 
+         MAIN CONTENT 
+         LÝ THUYẾT: Sử dụng class `flex-layout` để bọc toàn bộ trang sản phẩm.
+    ========================= -->
+    <main class="products-page">
+        <div class="container flex-layout">
+
+            <!-- SIDEBAR LỌC SẢN PHẨM 
+                 LÝ THUYẾT: Thẻ Semantic `<aside>` dùng để chứa những nội dung bổ trợ, phụ thuộc 
+                 vào nội dung chính (ví dụ như Thanh menu dọc, Bộ lọc Sidebar, Quảng cáo).
+            -->
+            <aside class="sidebar-filter">
+                <div class="filter-widget">
+                    <h3 class="filter-title">Danh Mục</h3>
+                    <ul class="filter-list" id="category-filter">
+                        <li><label><input type="radio" name="category" value="all" checked> Tất cả</label></li>
+                        <li><label><input type="radio" name="category" value="Laptop"> Laptop</label></li>
+                        <li><label><input type="radio" name="category" value="Phone"> Điện thoại</label></li>
+                    </ul>
+                </div>
+
+                <div class="filter-widget">
+                    <h3 class="filter-title">Mức Giá</h3>
+                    <ul class="filter-list" id="price-filter">
+                        <li><label><input type="radio" name="price" value="all" checked> Tất cả mức giá</label></li>
+                        <li><label><input type="radio" name="price" value="under-15"> Dưới 15 triệu</label></li>
+                        <li><label><input type="radio" name="price" value="15-25"> 15 - 25 triệu</label></li>
+                        <li><label><input type="radio" name="price" value="over-25"> Trên 25 triệu</label></li>
+                    </ul>
+                </div>
+                <button id="btn-clear-filter" class="btn-clear">Xóa Bộ Lọc</button>
+            </aside>
+
+            <!-- KHU VỰC HIỂN THỊ SẢN PHẨM 
+                 LÝ THUYẾT: Thẻ Semantic `<section>` bao bọc vùng nội dung độc lập mang một ý nghĩa nhất định.
+            -->
+            <section class="products-area">
+
+                <!-- Toolbar Area -->
+                <div class="products-toolbar">
+                    <div class="toolbar-search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="live-search" placeholder="Nhập tên sản phẩm để tìm nhanh...">
+                    </div>
+
+                    <div class="toolbar-view">
+                        <span>Chế độ xem:</span>
+                        <button class="view-btn active" id="btn-grid-view"><i
+                                class="fa-solid fa-border-all"></i></button>
+                        <button class="view-btn" id="btn-list-view"><i class="fa-solid fa-list"></i></button>
+                    </div>
+                </div>
+
+                <!-- Product List -->
+                <div class="product-grid" id="product-grid">
+                    <!-- Products will be injected by JS -->
+                </div>
+
+                <div id="no-products-msg" style="display: none; text-align: center; margin-top: 50px;">
+                    <i class="fa-regular fa-face-frown"
+                        style="font-size: 40px; color: #a0aec0; margin-bottom: 15px;"></i>
+                    <p style="color: #4a5568; font-size: 18px;">Không tìm thấy sản phẩm nào phù hợp.</p>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <!-- ======================= 
+         FOOTER SECTION 
+    ========================= -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="logo">
+                    <a href="index.html">
+                        <i class="fa-solid fa-microchip"></i>
+                        GDU <span>TechStore</span>
+                    </a>
+                </div>
+                <p class="footer-desc">Hệ thống bán lẻ các sản phẩm công nghệ uy tín hàng đầu. Cam kết chất lượng, bảo
+                    hành tận tâm.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h3>Về Chúng Tôi</h3>
+                <ul>
+                    <li><a href="#">Giới thiệu công ty</a></li>
+                    <li><a href="#">Tuyển dụng</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Điều khoản sử dụng</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Khách Hàng</h3>
+                <ul>
+                    <li><a href="#">Chính sách đổi trả</a></li>
+                    <li><a href="#">Hướng dẫn mua hàng</a></li>
+                    <li><a href="#">Chính sách bảo hành</a></li>
+                    <li><a href="#">Gửi yêu cầu hỗ trợ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Liên Hệ</h3>
+                <ul class="contact-info">
+                    <li><i class="fa-solid fa-location-dot"></i> Trụ sở: Quận Gò Vấp, TP.HCM</li>
+                    <li><i class="fa-solid fa-phone"></i> Hotline: 1900 6789</li>
+                    <li><i class="fa-solid fa-envelope"></i> Email: cskh@gdutech.com</li>
+                </ul>
+                <div class="map-container">
+                    <!-- Demo Google map iframe -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15673.719602070377!2d106.66699865!3d10.854294150000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529cdd3fe1f05%3A0xe7f920fbc896173b!2zR8OyIFbhuqVwLCBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1700000000000!5m2!1svi!2s"
+                        width="100%" height="80" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 GDU TechStore. All rights reserved. Đồ án của Sinh viên GDU.</p>
+        </div>
+    </footer>
+
+    <!-- GỌI SCRIPT BẰNG MODULE 
+         LÝ THUYẾT: Thêm thuộc tính `type="module"` vào thẻ <script> để báo cho trình duyệt biết 
+         các file JS này sử dụng cú pháp ES6 (import/export). Trình duyệt sẽ tự động chờ quá trình 
+         parse HTML xong (defer) rồi mới thực thi các file này!
+    -->
+    <script type="module" src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/api.js"></script>
+    <script type="module" src="assets/js/pages/products.js"></script>
+
+</body>
+
+</html>

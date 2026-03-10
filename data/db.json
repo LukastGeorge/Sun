@@ -1,0 +1,70 @@
+{
+    "_CÂU_HỎI_BẢO_VỆ_1": "Thầy/Cô: Dữ liệu này em lấy từ đâu? Trả lời: Dạ em tự tạo Mock Data JSON này mô phỏng Database thực. Em dùng Fetch API gọi nó thay vì hardcode HTML trực tiếp.",
+    "_CÂU_HỎI_BẢO_VỆ_2": "Thầy/Cô: Đường link ảnh 'assets/img/...' này lấy từ đâu và làm sao web hiểu để hiển thị? Trả lời: Dạ đây là đường dẫn tương đối (Relative Path) trỏ đến file ảnh vật lý em cố tình lưu trong thư mục assets của source code. Khi trình duyệt đọc img src='assets/...', nó sẽ tự động tìm vào đúng thư mục đó trên localhost để lấy hình lên, giúp web không bị lỗi 403 nếu CDN mạng sập.",
+    "products": [
+        {
+            "id": "1",
+            "name": "Laptop Apple MacBook Air M2 2022",
+            "price": 27990000,
+            "category": "Laptop",
+            "image": "assets/img/products/LaptopAppleMacBookAirM22022.png",
+            "description": "Chip Apple M2 cực mạnh mẽ, thiết kế mỏng nhẹ sang trọng."
+        },
+        {
+            "id": "2",
+            "name": "Laptop Asus TUF Gaming F15",
+            "price": 18490000,
+            "category": "Laptop",
+            "image": "assets/img/products/LaptopAsusTUFGamingF15.png",
+            "description": "Laptop Gaming với card rời NVIDIA RTX 2050 4GB."
+        },
+        {
+            "id": "3",
+            "name": "Laptop Lenovo IdeaPad Slim 3",
+            "price": 12990000,
+            "category": "Laptop",
+            "image": "assets/img/products/laptoplenovoideapadslim3.png",
+            "description": "Chiếc laptop học tập - văn phòng nhỏ gọn, giá rẻ vô cùng."
+        },
+        {
+            "id": "4",
+            "name": "Laptop Dell Inspiron 15 3520",
+            "price": 16590000,
+            "category": "Laptop",
+            "image": "assets/img/products/dell_inspiron_15_3520_black.png",
+            "description": "Màn hình 120Hz mượt mà, vi xử lý Intel Core i5 mạnh mẽ."
+        },
+        {
+            "id": "5",
+            "name": "iPhone 17 Pro Max 256GB",
+            "price": 34990000,
+            "category": "Phone",
+            "image": "assets/img/products/iphone.png",
+            "description": "Đỉnh cao công nghệ di động 2023 với khung Titanium."
+        },
+        {
+            "id": "6",
+            "name": "Samsung Galaxy S24 Ultra 5G",
+            "price": 33990000,
+            "category": "Phone",
+            "image": "assets/img/products/galaxyS24Ultra5G.jpg",
+            "description": "Tích hợp Galaxy AI thông minh, S Pen đa dụng độc quyền."
+        },
+        {
+            "id": "7",
+            "name": "iPhone 15 pro max 256GB",
+            "price": 15490000,
+            "category": "Phone",
+            "image": "assets/img/products/iphone15promax.png",
+            "description": "Lựa chọn hàng đầu cho phân khúc giá tầm trung của Apple."
+        },
+        {
+            "id": "8",
+            "name": "Xiaomi 17 Pro Max 5G",
+            "price": 9490000,
+            "category": "Phone",
+            "image": "assets/img/products/346.png",
+            "description": "Smartphone quốc dân với camera 200MP, sạc nhanh 120W."
+        }
+    ]
+}
