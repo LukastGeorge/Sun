@@ -24,7 +24,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     // LÝ THUYẾT: Đối tượng `URLSearchParams` giúp trích xuất các tham số (Parameters) trên thanh địa chỉ URL.
     // Ở đây ta gọi phương thức `.get('id')` để bóc tách mã sản phẩm người dùng đang nhấn vào.
     // CÂU HỎI BẢO VỆ: Thầy/Cô: "Làm sao trang Detail biết được em vừa ấn vào con Laptop hay con iPhone mà hiện ra cho đúng?"
-    // DẠ TRẢ LỜI: "Dạ thứ nhất, ở trang chủ lúc click thẻ thẻ a href, thẻ gài sẵn ID lên URL (VD: detail.html?id=1). Trang Detail này em dùng hàm new URLSearchParams() để lấy đúng con số 1 đó trên thanh địa chỉ. Sau đó em map lại với mảng dữ liệu (Array.find p.id === 1) để lôi tấm hình iPhone / Laptop của số 1 ra và nhét giao diện ạ."
+    // DẠ TRẢ LỜI: "Dạ thứ nhất, ở trang chủ lúc click thẻ thẻ a href, thẻ gài sẵn ID lên URL (VD: detail.html?id=1). Trang Detail này em dùng hàm new URLSearchParams()
+    // để lấy đúng con số 1 đó trên thanh địa chỉ. Sau đó em map lại với mảng dữ liệu (Array.find p.id === 1) để lôi tấm hình iPhone / Laptop của số 1 ra và nhét giao diện ạ."
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('id');
 

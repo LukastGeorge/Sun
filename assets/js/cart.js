@@ -9,7 +9,8 @@ const CART_KEY = 'gdu_techstore_cart';
 // trên trình duyệt người dùng. Dữ liệu trong LocalStorage luôn là chuỗi (String), do đó 
 // cần dùng JSON.parse() để biến đổi ngược lại thành Object/Mảng Javascript.
 // CÂU HỎI BẢO VỆ: Thầy/Cô: "Tại sao em phải lưu giỏ hàng bằng localStorage mà không dùng hàm biến Let/Const thông thường?"
-// DẠ TRẢ LỜI: "Dạ vì biến thông thường sẽ bị xóa trắng khi người dùng Load lại trang (F5) hoặc chuyển từ trang Chủ sang trang Cửa hàng. LocalStorage giúp dữ liệu nằm vĩnh viễn trên trỉnh duyệt HTML5 Web Storage cho đến khi họ tự tay xóa."
+// DẠ TRẢ LỜI: "Dạ vì biến thông thường sẽ bị xóa trắng khi người dùng Load lại trang (F5) hoặc chuyển từ trang Chủ sang trang Cửa hàng.
+//  LocalStorage giúp dữ liệu nằm vĩnh viễn trên trỉnh duyệt HTML5 Web Storage cho đến khi họ tự tay xóa."
 export const getCart = () => {
     const cart = localStorage.getItem(CART_KEY);
     return cart ? JSON.parse(cart) : [];

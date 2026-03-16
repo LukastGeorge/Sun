@@ -13,30 +13,13 @@ export const formatVND = (price) => {
 // trước khi Javascript chạy lệnh can thiệp. Giúp tránh lỗi (Null Reference Error).
 document.addEventListener("DOMContentLoaded", () => {
     const mobileToggle = document.querySelector('.mobile-menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
+    const header = document.querySelector('.header'); // Lấy thẻ cha Header
 
-    if (mobileToggle && navMenu) {
+    if (mobileToggle && header) {
+        // CÂU HỎI BẢO VỆ: Thầy/Cô: "Làm sao cái Menu trên Điện thoại tự ẩn tự hiện được khi bấm nút 3 gạch?"
+        // DẠ TRẢ LỜI: "Dạ em bắt sự kiện Click vào Icon 3 gạch (Hamburger). Mỗi lần Click, JS sẽ bật/tắt class '.mobile-active' vào thẻ Header lớn nhất bằng thuộc tính classList.toggle(). Từ đó CSS Mobile bên layout.css sẽ hiểu là cần hiển thị thả danh sách Menu xuống."
         mobileToggle.addEventListener('click', () => {
-            // Hiển thị dạng block khi toggle (cho đơn giản, vì đây chỉ là logic cơ bản)
-            if (navMenu.style.display === 'block') {
-                navMenu.style.display = 'none';
-            } else {
-                navMenu.style.display = 'block';
-                // Thêm một chút style padding trên mobile tạm thời
-                navMenu.style.position = 'absolute';
-                navMenu.style.top = '70px';
-                navMenu.style.left = '0';
-                navMenu.style.width = '100%';
-                navMenu.style.backgroundColor = 'var(--white)';
-                navMenu.style.padding = '20px';
-                navMenu.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
-
-                const ul = navMenu.querySelector('ul');
-                if (ul) {
-                    ul.style.flexDirection = 'column';
-                    ul.style.gap = '15px';
-                }
-            }
+            header.classList.toggle('mobile-active');
         });
     }
 
