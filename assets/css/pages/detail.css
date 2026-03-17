@@ -13,6 +13,7 @@
     margin-bottom: 30px;
     display: flex;
     align-items: center;
+    flex-wrap: wrap; /* Tránh vỡ chữ thành cột dọc trên màn hình nhỏ */
     gap: 8px;
 }
 

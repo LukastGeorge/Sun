@@ -231,10 +231,28 @@
         /* Ẩn navigation và search bar trên mobile/tablet nhỏ */
     }
 
+    /* Đảm bảo Icon Giỏ Hàng và Menu Hamburger nằm ngang hàng và căn lề phải */
+    .header-actions {
+        gap: 15px;
+    }
+
     /* Khi Javascript gắn class .mobile-active vào thẻ header lúc bấm nút hamburger */
     .header.mobile-active .nav-menu {
         display: block;
+        position: absolute;
+        top: 70px; /* Nằm ngay dưới mép header */
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        padding: 20px;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        z-index: 999; /* Nằm đè lên nội dung bên dưới */
         animation: slideDown 0.3s ease forwards;
+    }
+
+    .header.mobile-active .nav-menu ul {
+        flex-direction: column;
+        gap: 15px;
     }
 
     @keyframes slideDown {
