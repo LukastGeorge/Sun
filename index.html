@@ -5,24 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GDU TechStore</title>
-    <!-- Thư viện Font Awesome cho các Icon (Tìm kiếm, Giỏ hàng, Menu) -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts cho Typography đẹp mắt -->
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Link tới file CSS bên ngoài -->
+    
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
-    <!-- ======================= 
-         HEADER SECTION 
-         LÝ THUYẾT: Sử dụng thẻ Semantic <header> thay vì <div> để định nghĩa khu vực đầu trang, 
-         chứa Logo, Menu điều hướng (nav) và Form tìm kiếm. Giúp SEO tốt hơn và dễ bảo trì.
-    ========================= -->
+   
     <header class="header">
         <div class="header-container">
-            <!-- 1. Logo -->
+            
             <div class="logo">
                 <a href="index.html">
                     <i class="fa-solid fa-microchip"></i>
@@ -30,7 +26,7 @@
                 </a>
             </div>
 
-            <!-- 2. Menu điều hướng -->
+           
             <nav class="nav-menu">
                 <ul>
                     <li><a href="index.html">Trang Chủ</a></li>
@@ -41,21 +37,21 @@
                 </ul>
             </nav>
 
-            <!-- 3. Thanh tìm kiếm -->
+           
             <div class="search-container">
                 <input type="text" placeholder="Bạn cần tìm gì hôm nay?">
                 <button type="submit" title="Tìm kiếm"><i class="fa-solid fa-search"></i></button>
             </div>
 
-            <!-- 4. Icon giỏ hàng & Mobile Toggle -->
+            
             <div class="header-actions">
                 <a href="cart.html" class="cart-icon" title="Giỏ hàng của bạn">
                     <i class="fa-solid fa-cart-shopping"></i>
-                    <!-- Hiển thị số lượng -->
+                   
                     <span class="cart-count">3</span>
                 </a>
 
-                <!-- Nút toggle menu cho phiên bản Mobile -->
+                
                 <div class="mobile-menu-toggle">
                     <i class="fa-solid fa-bars"></i>
                 </div>
@@ -63,17 +59,9 @@
         </div>
     </header>
 
-    <!-- ======================= 
-         MAIN CONTENT 
-         LÝ THUYẾT: Thẻ <main> đại diện cho nội dung chính của trang web. Khai báo <main> 
-         giúp trình duyệt và trình đọc màn hình dễ dàng xác định vùng thông tin quan trọng nhất.
-    ========================= -->
+    
     <main>
-        <!-- ======================= 
-             HERO SECTION 
-             LÝ THUYẾT: Thẻ <section> dùng để nhóm các nội dung có liên quan thành một khối logic.
-             Ở đây là khối Banner nổi bật (Hero Banner) với hiệu ứng CSS Animation.
-        ========================= -->
+       
         <section class="hero">
             <div class="hero-content">
                 <span class="hero-badge">Big Sale 2026</span>
@@ -86,9 +74,7 @@
             </div>
         </section>
 
-        <!-- ======================= 
-             PRODUCT SECTION 
-        ========================= -->
+       
         <section class="products-section" id="products-section">
             <div class="section-header">
                 <h2 class="section-title">Sản Phẩm Mới Nhất</h2>
@@ -97,16 +83,13 @@
                 </a>
             </div>
 
-            <!-- Grip Container: Dữ liệu sẽ được fetch và render vào đây bởi home.js -->
             <div class="product-grid" id="product-grid">
-                <!-- Sản phẩm mẫu sẽ được inject qua JS -->
+                
             </div>
         </section>
     </main>
 
-    <!-- ======================= 
-         FOOTER SECTION 
-    ========================= -->
+
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-col">
@@ -154,7 +137,7 @@
                     <li><i class="fa-solid fa-envelope"></i> Email: cskh@gdutech.com</li>
                 </ul>
                 <div class="map-container">
-                    <!-- Demo Google map iframe -->
+                    
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15673.719602070377!2d106.66699865!3d10.854294150000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529cdd3fe1f05%3A0xe7f920fbc896173b!2zR8OyIFbhuqVwLCBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1700000000000!5m2!1svi!2s"
                         width="100%" height="80" style="border:0;" allowfullscreen="" loading="lazy"
@@ -167,8 +150,7 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <!-- Sử dụng type="module" để cho phép import/export ES6 -->
+    
     <script type="module" src="assets/js/main.js"></script>
     <script type="module" src="assets/js/api.js"></script>
     <script type="module" src="assets/js/pages/home.js"></script>

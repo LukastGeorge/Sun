@@ -1,23 +1,14 @@
-/* =========================================
-   GDU TECHSTORE - V1.0 - Main Stylesheet
-   LÝ THUYẾT BÁO CÁO: Sử dụng phương pháp Tổ chức Kiến trúc CSS theo hướng 
-   Module hóa (CSS Modular Architecture - mượn ý tưởng từ 7-1 Pattern của Sass).
-   Thay vì nhồi nhét tất cả code vào 1 file khổng lồ dễ gây xung đột (Conflict), 
-   việc chia nhỏ thành base, layout, components và pages giúp dễ quản lý (Maintainable) 
-   và dễ mở rộng (Scalable) khi làm đồ án.
-   ========================================= */
 
-/* 1. Base (Reset, Variables, Typography) */
 @import url('./base.css');
 
-/* 2. Layouts (Header, Footer, Grid) */
+
 @import url('./layout.css');
 
-/* 3. Components (Buttons, Cards, Forms) */
+
 @import url('./components/button.css');
 @import url('./components/card.css');
 
-/* 4. Pages (Đặc thù của từng trang) */
+
 @import url('./pages/home.css');
 @import url('./pages/products.css');
 @import url('./pages/detail.css');
